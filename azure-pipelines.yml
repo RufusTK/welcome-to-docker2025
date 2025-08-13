@@ -13,7 +13,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'test222'
-    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFile: 'welcome-to-docker2025 /docker-compose.yml'
     additionalDockerComposeFiles: 'Dockerfile'
     dockerComposeFileArgs: 'Dockerfile'
     action: 'Build services'
@@ -22,7 +22,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'test222'
-    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFile: 'welcome-to-docker2025 /docker-compose.yml'
     additionalDockerComposeFiles: 'Dockerfile'
     dockerComposeFileArgs: 'Dockerfile'
     action: 'Push services'
