@@ -5,35 +5,23 @@
 trigger:
 - none
 
-resources:
-- repo: self
+pool:
+  vmImage: ubuntu-24.04
 
-variables:
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'be777766-e0a5-470d-a1ba-2db361ca8978'
-  imageRepository: 'rufustkwelcometodocker'
-  containerRegistry: 'test222.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+steps:
+- task: DockerCompose@1
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'test222'
+    dockerComposeFile: '**/docker-compose.yml'
+    projectName: 'welcome-to-docker2025'
+    action: 'Build services'
 
-  # Agent VM image name
-  vmImageName: 'ubuntu-24.04'
-
-stages:
-- stage: Build
-  displayName: Build and push stage
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-    steps:
-    - task: Docker@2
-      displayName: Build and push an image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+- task: DockerCompose@1
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'test222'
+    dockerComposeFile: '**/docker-compose.yml'
+    projectName: 'welcome-to-docker2025'
+    action: 'Push services'
+    additionalImageTags: 'Dockerfile'
