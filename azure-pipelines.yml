@@ -13,7 +13,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'test222'
-    dockerComposeFile: 'welcome-to-docker2025 /docker-compose.yml'
+    dockerComposeFile: 'welcome-to-docker2025/docker-compose.yml'
     projectName: 'welcome-to-docker2025'
     action: 'Build services'
 
@@ -21,7 +21,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'test222'
-    dockerComposeFile: 'welcome-to-docker2025 /docker-compose.yml'
+    dockerComposeFile: 'welcome-to-docker2025/docker-compose.yml'
     projectName: 'welcome-to-docker2025'
     action: 'Push services'
     additionalImageTags: 'Dockerfile'
