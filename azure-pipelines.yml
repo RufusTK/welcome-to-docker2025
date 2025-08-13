@@ -14,6 +14,7 @@ steps:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'test222'
     dockerComposeFile: 'welcome-to-docker2025 /docker-compose.yml'
+    projectName: 'welcome-to-docker2025'
     action: 'Build services'
 
 - task: DockerCompose@1
@@ -21,5 +22,6 @@ steps:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'test222'
     dockerComposeFile: 'welcome-to-docker2025 /docker-compose.yml'
+    projectName: 'welcome-to-docker2025'
     action: 'Push services'
     additionalImageTags: 'Dockerfile'
