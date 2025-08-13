@@ -3,6 +3,6 @@ version: '3.8'
 services:
   web:
     build: .
-    image: welcome-to-docker:latest
+    image: welcome-to-docker2025:latest
     ports:
       - "5000:5000"
